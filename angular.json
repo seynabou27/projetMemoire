@@ -25,9 +25,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/assets/dist/css/style.min.css",
+              "src/assets/dist/vendors/simplebar/css/simplebar.css",
+              "src/assets/dist/css/vendors/simplebar.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.slim.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "src/assets/dist/vendors/@coreui/coreui/js/coreui.bundle.min.js",
+              "src/assets/dist/vendors/simplebar/js/simplebar.min.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -51,7 +63,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -94,5 +112,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0e5dac59-7f33-4a73-8b7c-deb07bb32ff3"
   }
 }
